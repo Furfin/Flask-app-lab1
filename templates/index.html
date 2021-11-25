@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="/">Home</a></li>
+    {% if user.is_authenticated %}    
+    <li><a href="/logout">Logout</a></li>
+    {%else%}
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+
+    {% endif %}
+    {%if c_user%}
+    <li><a>{{c_user.username}}</a></li>
+    {%endif%}
+
+</ul>
+<div style ="text-align:center;font-szie:200%;padding:200px;">
+<h1>Tabula Rasa!</h1>
+<p>Tincidunt felis vehicula neque cursus rhoncus eget, sit amet vulputate dictumst integer adipiscing aliquet hymenaeos sollicitudin sociis commodo feugiat vestibulum Pellentesque lectus rutrum elit cursus urna curae; auctor nascetur senectus diam nisl et lectus egestas eget.
+</p>
+<p>
+Accumsan hendrerit amet mauris. Ridiculus urna hendrerit at scelerisque in porttitor a Consectetuer curabitur dictumst sapien velit gravida fringilla. Sociis iaculis penatibus ut rhoncus rutrum tellus dui nostra Fermentum vehicula laoreet interdum vel tempor.
+</p>
+<p>
+Diam tortor posuere. Pharetra mauris ad ultrices quis. Nullam metus duis duis quis euismod. Tellus sociis nisl curabitur curae; amet nostra dolor cubilia sed dolor donec suspendisse interdum posuere est.</div>
+</p>
+</body>
+</html>
